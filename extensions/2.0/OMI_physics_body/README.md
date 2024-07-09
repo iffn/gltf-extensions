@@ -108,6 +108,10 @@ If a node has the `"trigger"` property defined, it is a non-solid trigger that c
 
 The list of trigger properties and their details can be found in the [README.trigger.md](README.trigger.md) file. Nodes with a `"trigger"` property may have a collision filter, which is detailed in the [README.trigger.md](README.trigger.md) file.
 
+### glTF Object Model
+
+See the [README.motion.md](README.motion.md) file for the JSON pointers defined for the motion properties.
+
 ### JSON Schema
 
 See [node.OMI_physics_body.schema.json](schema/node.OMI_physics_body.schema.json) for the main node schema, and these for the sub-JSON property schemas:
