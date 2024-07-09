@@ -21,6 +21,11 @@
             "description": "If present, this node is non-solid and can act as a trigger, specified by these trigger parameters.",
             "$ref": "glTF.OMI_physics_body.trigger.schema.json"
         },
+        "joint": {
+            "type": "object",
+            "description": "If present, this node is a joint that constrains how physics bodies move.",
+            "$ref": "glTF.OMI_physics_body.joint.schema.json"
+        },
         "extensions": { },
         "extras": { }
     }

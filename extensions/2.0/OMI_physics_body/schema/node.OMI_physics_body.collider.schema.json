@@ -11,6 +11,16 @@
             "description": "The id of the shape referenced by this node.",
             "default": -1
         },
+        "physicsMaterial": {
+            "allOf": [ { "$ref": "glTFid.schema.json" } ],
+            "description": "The index of the physics material in the top level physicsMaterials array.",
+            "default": -1
+        },
+        "collisionFilter": {
+            "allOf": [ { "$ref": "glTFid.schema.json" } ],
+            "description": "The index of the filter information in the top level collisionFilters array.",
+            "default": -1
+        },
         "extensions": { },
         "extras": { }
     }

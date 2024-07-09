@@ -10,10 +10,11 @@ As the name "trigger" suggests, implementations may use these shapes as sensors 
 
 ## Trigger Properties
 
-|           | Type        | Description                                                                                                         | Default value |
-| --------- | ----------- | ------------------------------------------------------------------------------------------------------------------- | ------------- |
-| **shape** | `integer`   | The index of the shape to use as the trigger shape.                                                                 | -1            |
-| **nodes** | `integer[]` | For compound triggers, the set of descendant glTF nodes with a trigger property that make up this compound trigger. | []            |
+|                     | Type        | Description                                                                                                         | Default value |
+| ------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------- | ------------- |
+| **shape**           | `integer`   | The index of the shape to use as the trigger shape.                                                                 | -1            |
+| **nodes**           | `integer[]` | For compound triggers, the set of descendant glTF nodes with a trigger property that make up this compound trigger. | []            |
+| **collisionFilter** | `integer`   | The index of the filter information in the top level collisionFilters array.                                        | -1            |
 
 ### Shape
 
@@ -24,6 +25,10 @@ The `"shape"` property is an integer index that references a shape in the docume
 The `"nodes"` property is an array of integer indices that reference descendant glTF nodes with a trigger property, which make up a compound trigger on this glTF node. If not specified or empty, this node is not a compound trigger.
 
 When this property is set and contains valid items, this indicates that this glTF node is a compound trigger. Each item is the index of a glTF node that must have its own OMI_physics_body trigger property, and must be a descendant of this node.
+
+### Collision Filter
+
+The `"collisionFilter"` property is an integer index that references a collision filter in the document-level collisionFilters array in the `OMI_physics_body` extension. If not specified or -1, the default collision filter is used.
 
 ## JSON Schema
 

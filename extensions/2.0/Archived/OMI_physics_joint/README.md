@@ -2,11 +2,11 @@
 
 ## Contributors
 
-* Aaron Franke, The Mirror Megaverse Inc.
+- Aaron Franke, The Mirror Megaverse Inc.
 
 ## Status
 
-Open Metaverse Interoperability Group Stage 1 Proposal
+Archived
 
 ## Dependencies
 

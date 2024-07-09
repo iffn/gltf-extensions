@@ -2,8 +2,8 @@
 
 ## Contributors
 
-* Aaron Franke, The Mirror Megaverse Inc.
-* Mauve Signweaver, Mauve Software Inc.
+- Aaron Franke, Godot Engine.
+- Mauve Signweaver, Mauve Software Inc.
 
 ## Status
 
@@ -25,7 +25,7 @@ If a node with a collider shape does not have a motion property on itself or an 
 
 ### Example:
 
-This example defines a static body node which has a single box collider as a child:
+This example defines a physics node with dynamic motion and a single box collider:
 
 ```json
 {
@@ -82,11 +82,12 @@ The extension is intended to be used together with `OMI_physics_shape`, which de
 
 ### Property Summary
 
-|              | Type | Description                                                  | Default value |
-| ------------ | ---- | ------------------------------------------------------------ | ------------- |
-| **motion**   | JSON | If present, this node has its motion controlled by physics.  | `null`        |
-| **collider** | JSON | If present, this node is solid and can be collided with.     | `null`        |
-| **trigger**  | JSON | If present, this node is non-solid and can act as a trigger. | `null`        |
+|              | Type | Description                                                                  | Default value |
+| ------------ | ---- | ---------------------------------------------------------------------------- | ------------- |
+| **motion**   | JSON | If present, this node has its motion controlled by physics.                  | `null`        |
+| **collider** | JSON | If present, this node is solid and can be collided with.                     | `null`        |
+| **trigger**  | JSON | If present, this node is non-solid and can act as a trigger.                 | `null`        |
+| **joint**    | JSON | If present, this node is a joint constraining the motion of two other nodes. | `null`        |
 
 Each of these properties are recommended to be defined on separate nodes. This results in a very clear, simple, and portable document structure, and ensures that each behavior has its own transform. However, they may also be all defined on the same node. Implementations must support all of these cases in order to be compliant.
 
@@ -108,23 +109,30 @@ If a node has the `"trigger"` property defined, it is a non-solid trigger that c
 
 The list of trigger properties and their details can be found in the [README.trigger.md](README.trigger.md) file.
 
+#### Joint
+
+If a node has the `"joint"` property defined, it is a joint that constrains the motion of two other nodes.
+
+The list of joint properties and their details can be found in the [README.joint.md](README.joint.md) file.
+
 ### JSON Schema
 
 See [node.OMI_physics_body.schema.json](schema/node.OMI_physics_body.schema.json) for the main node schema, and these for the sub-JSON property schemas:
-* Motion: [node.OMI_physics_body.motion.schema.json](schema/node.OMI_physics_body.motion.schema.json)
-* Collider: [node.OMI_physics_body.collider.schema.json](schema/node.OMI_physics_body.collider.schema.json)
-* Trigger: [node.OMI_physics_body.trigger.schema.json](schema/node.OMI_physics_body.trigger.schema.json)
+- Motion: [node.OMI_physics_body.motion.schema.json](schema/node.OMI_physics_body.motion.schema.json)
+- Collider: [node.OMI_physics_body.collider.schema.json](schema/node.OMI_physics_body.collider.schema.json)
+- Trigger: [node.OMI_physics_body.trigger.schema.json](schema/node.OMI_physics_body.trigger.schema.json)
+- Joint: [node.OMI_physics_body.joint.schema.json](schema/node.OMI_physics_body.joint.schema.json)
 
 ## Known Implementations
 
-* Godot Engine: https://github.com/godotengine/godot/pull/78967
+- Godot Engine: https://github.com/godotengine/godot/pull/78967
 
 ## Resources:
 
-* Unity colliders: https://docs.unity3d.com/Manual/CollidersOverview.html
-* Unreal Engine Physics: https://docs.unrealengine.com/4.27/en-US/InteractiveExperiences/Physics/Collision/Overview/
-* Godot Physics Body: https://docs.godotengine.org/en/stable/classes/class_physicsbody.html
-* Godot Area: https://docs.godotengine.org/en/stable/classes/class_area.html
-* Godot RigidBody3D: https://docs.godotengine.org/en/latest/classes/class_rigidbody3d.html
-* Wikipedia Moment of Inertia: https://en.wikipedia.org/wiki/Moment_of_inertia
-* Wikipedia Rigid Body Dynamics: https://en.wikipedia.org/wiki/Rigid_body_dynamics
+- Unity colliders: https://docs.unity3d.com/Manual/CollidersOverview.html
+- Unreal Engine Physics: https://docs.unrealengine.com/4.27/en-US/InteractiveExperiences/Physics/Collision/Overview/
+- Godot Physics Body: https://docs.godotengine.org/en/stable/classes/class_physicsbody.html
+- Godot Area: https://docs.godotengine.org/en/stable/classes/class_area.html
+- Godot RigidBody3D: https://docs.godotengine.org/en/latest/classes/class_rigidbody3d.html
+- Wikipedia Moment of Inertia: https://en.wikipedia.org/wiki/Moment_of_inertia
+- Wikipedia Rigid Body Dynamics: https://en.wikipedia.org/wiki/Rigid_body_dynamics

@@ -2,9 +2,9 @@
 
 If a node has the `"motion"` property defined, its transform is driven by the physics engine.
 
-* Descendant nodes should move with that node. The physics engine should treat them as part of a single body.
-* If a descendant node has its own motion property, that node should be treated as an independent body during simulation. There is no implicit requirement that it follows its "parent" rigid body.
-* If a node's transform is animated by animations in the file, those animations should take priority over the physics simulation.
+- Descendant nodes should move with that node. The physics engine should treat them as part of a single body.
+- If a descendant node has its own motion property, that node should be treated as an independent body during simulation. There is no implicit requirement that it follows its "parent" rigid body.
+- If a node's transform is animated by animations in the file, those animations should take priority over the physics simulation.
 
 ## Motion Properties
 

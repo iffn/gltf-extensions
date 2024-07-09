@@ -7,12 +7,8 @@
     "allOf": [ { "$ref" : "glTFProperty.schema.json" } ],
     "properties": {
         "shape": {
+            "allOf": [{ "$ref": "glTFid.schema.json" }],
             "description": "The id of the shape referenced by this node.",
-            "allOf": [
-                {
-                    "$ref": "glTFid.schema.json"
-                }
-            ],
             "default": -1
         },
         "nodes": {
@@ -23,6 +19,10 @@
             },
             "uniqueItems": true,
             "minItems": 1
+        },
+        "collisionFilter": {
+            "allOf": [{ "$ref": "glTFid.schema.json" }],
+            "description": "The index of the filter information in the top level collisionFilters array."
         },
         "extensions": { },
         "extras": { }
